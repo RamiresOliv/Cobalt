@@ -1,0 +1,13 @@
+[book]
+authors = ["RamiresOliv"]
+language = "en"
+src = "src"
+title = "RubberScript"
+
+[output.html]
+additional-css = ["auto-dir.css", "general.css"]
+additional-js = ["custom.js"]
+default-theme = "dark"
+preferred-dark-theme = "coal"
+git-repository-url = "https://github.com/RamiresOliv/RubberScript/"
+git-repository-icon = "fa-github"
