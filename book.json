@@ -1,0 +1,17 @@
+{
+  "name": "Rubber Script",
+  "description": "A powerfull and a heavy syntax language.",
+  "url": "https://ramiresoliv.github.io/RubberScript",
+  "author": {
+    "name": "RamiresOliv",
+    "github": "https://github.com/RamiresOliv/RubberScript"
+  },
+  "navigation": {
+    "enabled": true,
+    "whitelist": [".md", ".html"],
+    "blacklist_dir": ["images"]
+  },
+  "includes": {
+    "test": "argument."
+  }
+}
