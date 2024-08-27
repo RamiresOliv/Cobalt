@@ -1,4 +1,4 @@
-Here some examples of Rubber usage:
+Here some examples of Cobalt usage:
 
 ```clj
 ; Command usage:

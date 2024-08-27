@@ -8,7 +8,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rubber Script / !=</title>
+    <title>Cobalt / !=</title>
     <link
       rel="shortcut icon"
       href="./favicon.ico"
@@ -37,10 +37,10 @@ function fixPath(path) {
   path = path || "";
   if (!path.startsWith("/")) path = "/" + path;
 
-  if ("https://ramiresoliv.github.io/RubberScript" == "") {
+  if ("http://localhost:6555" == "") {
     return document.location.origin + path;
   } else {
-    return "https://ramiresoliv.github.io/RubberScript" + path;
+    return "http://localhost:6555" + path;
   }
 }
  </script> <script> /*
@@ -63,6 +63,11 @@ ul {
   margin: 0;
   padding: 0;
   font-family: "Inconsolata", monospace;
+  background-color: #fcfcfc;
+}
+
+body:black_theme {
+  background-color: #191b1b;
 }
 
 ul ul {
@@ -72,6 +77,10 @@ ul ul {
 a {
   text-decoration: none;
   color: #000000;
+}
+
+a:dark_theme {
+  color: #e8e7e2;
 }
 
 .container {
@@ -98,6 +107,10 @@ a {
   max-width: 1000px;
 }
 
+#sidebar_black_theme {
+  background-color: #1b1c1f;
+}
+
 .sidebar ul {
   list-style: none;
 }
@@ -115,6 +128,10 @@ a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.sidebar ul li a:black_theme {
+  background-color: #e8e7e2;
 }
 
 .sidebar ul li a:hover {
@@ -176,6 +193,13 @@ a {
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+.content .header:dark_theme {
+  color: #e8e7e2;
+}
+.content .header:dark_theme {
+  color: #e8e7e2;
 }
 
 .content .header h3 {
@@ -243,6 +267,10 @@ code {
   padding: 2px 4px; /* Espaçamento interno reduzido */
   border-radius: 4px; /* Cantos arredondados */
 }
+
+code:dark_theme {
+  background-color: #e6e6e6;
+}
  </style>
     <script
       src="https://kit.fontawesome.com/0dcf98cd2f.js"
@@ -251,10 +279,37 @@ code {
 
     <script>
       window.onload = () => {
+        const body = document.getElementsByClassName("body");
         const glossary = document.getElementById("glossary");
         const github_logo = document.getElementById("github_logo");
         const menu_toggle = document.getElementById("menu_toggle");
         const print_icon = document.getElementById("print_icon");
+        const theme_toggle_moon = document.getElementById("theme_toggle");
+
+        const themes = {
+          dark: "fa-solid fa-moon",
+          white: "fa-solid fa-sun",
+        };
+
+        /*let themeIs = 0; // 0: dark, 1: white
+
+        const themeFunc = (m) => {
+          if (themeIs == 0) {
+            themeIs = 1;
+            theme_toggle_sun.style.display = null;
+            theme_toggle_moon.style.display = "none";
+
+            body.className = "black_theme";
+          } else {
+            themeIs = 0;
+            theme_toggle_sun.style.display = "none";
+            theme_toggle_moon.style.display = null;
+            body.className = "";
+          }
+        };
+
+        theme_toggle_moon.addEventListener("click", themeFunc);
+        theme_toggle_sun.addEventListener("click", themeFunc);*/
 
         let menu_state = true;
         menu_toggle.addEventListener("click", (m) => {
@@ -270,58 +325,59 @@ code {
         });
 
         github_logo.addEventListener("click", (m) => {
-          window.open("https://github.com/RamiresOliv/RubberScript", "_blank");
+          window.open("https://github.com/RamiresOliv/Cobalt", "_blank");
         });
 
         print_icon.addEventListener("click", (m) => {
+          console.log("This feature is still in dev.");
           print();
         });
       };
     </script>
   </head>
-  <body>
+  <body class="body">
     <div class="container">
       <nav id="glossary" class="sidebar">
         <div class="header">
           <h3>
-            <a href="https://ramiresoliv.github.io/RubberScript"
+            <a href="http://localhost:6555"
               ><ico style="color: #000000" class="fa-solid fa-cubes"></ico>
-              Rubber Script</a
+              Cobalt</a
             >
           </h3>
         </div>
         <hr />
         <ul>
-          <li><a href="https://ramiresoliv.github.io/RubberScript">1. home</a></li>
-<li style="margin-left: 0px"><a href="https://ramiresoliv.github.io/RubberScript/basics">2. basics</a></li>
-<li style="margin-left: 20px"><a href="https://ramiresoliv.github.io/RubberScript/basics\context">2.2. context</a></li>
-<li style="margin-left: 20px"><a href="https://ramiresoliv.github.io/RubberScript/basics\logic">2.3. logic</a></li>
-<li style="margin-left: 20px"><a href="https://ramiresoliv.github.io/RubberScript/basics\usage">2.4. usage</a></li>
-<li style="margin-left: 0px"><a href="https://ramiresoliv.github.io/RubberScript/references">3. references</a></li>
-<li style="margin-left: 20px"><a href="https://ramiresoliv.github.io/RubberScript/references\defines">3.2. defines</a></li>
-<li style="margin-left: 40px"><a href="https://ramiresoliv.github.io/RubberScript/references\defines\get">3.2.2. get</a></li>
-<li style="margin-left: 40px"><a href="https://ramiresoliv.github.io/RubberScript/references\defines\let">3.2.3. let</a></li>
-<li style="margin-left: 40px"><a href="https://ramiresoliv.github.io/RubberScript/references\defines\string-calls">3.2.4. string calls</a></li>
-<li style="margin-left: 20px"><a href="https://ramiresoliv.github.io/RubberScript/references\math">3.3. math</a></li>
-<li style="margin-left: 40px"><a href="https://ramiresoliv.github.io/RubberScript/references\math\sum">3.3.2. sum</a></li>
-<li style="margin-left: 20px"><a href="https://ramiresoliv.github.io/RubberScript/references\operatores">3.4. operatores</a></li>
-<li style="margin-left: 40px"><a href="https://ramiresoliv.github.io/RubberScript/references\operatores\!=">3.4.2. !=</a></li>
-<li style="margin-left: 40px"><a href="https://ramiresoliv.github.io/RubberScript/references\operatores\==">3.4.3. ==</a></li>
-<li style="margin-left: 40px"><a href="https://ramiresoliv.github.io/RubberScript/references\operatores\misc">3.4.4. misc</a></li>
-<li style="margin-left: 60px"><a href="https://ramiresoliv.github.io/RubberScript/references\operatores\misc\and">3.4.4.2. and</a></li>
-<li style="margin-left: 60px"><a href="https://ramiresoliv.github.io/RubberScript/references\operatores\misc\not">3.4.4.3. not</a></li>
-<li style="margin-left: 60px"><a href="https://ramiresoliv.github.io/RubberScript/references\operatores\misc\or">3.4.4.4. or</a></li>
-<li style="margin-left: 40px"><a href="https://ramiresoliv.github.io/RubberScript/references\operatores\numbers">3.4.5. numbers</a></li>
-<li style="margin-left: 60px"><a href="https://ramiresoliv.github.io/RubberScript/references\operatores\numbers\bigger">3.4.5.2. bigger</a></li>
-<li style="margin-left: 60px"><a href="https://ramiresoliv.github.io/RubberScript/references\operatores\numbers\bigger=">3.4.5.3. bigger=</a></li>
-<li style="margin-left: 60px"><a href="https://ramiresoliv.github.io/RubberScript/references\operatores\numbers\smaller">3.4.5.4. smaller</a></li>
-<li style="margin-left: 60px"><a href="https://ramiresoliv.github.io/RubberScript/references\operatores\numbers\smaller=">3.4.5.5. smaller=</a></li>
+          <li><a href="http://localhost:6555">1. home</a></li>
+<li style="margin-left: 0px"><a href="http://localhost:6555/basics">2. basics</a></li>
+<li style="margin-left: 20px"><a href="http://localhost:6555/basics\context">2.2. context</a></li>
+<li style="margin-left: 20px"><a href="http://localhost:6555/basics\logic">2.3. logic</a></li>
+<li style="margin-left: 20px"><a href="http://localhost:6555/basics\usage">2.4. usage</a></li>
+<li style="margin-left: 0px"><a href="http://localhost:6555/references">3. references</a></li>
+<li style="margin-left: 20px"><a href="http://localhost:6555/references\defines">3.2. defines</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\defines\get">3.2.2. get</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\defines\let">3.2.3. let</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\defines\string-calls">3.2.4. string calls</a></li>
+<li style="margin-left: 20px"><a href="http://localhost:6555/references\math">3.3. math</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\math\sum">3.3.2. sum</a></li>
+<li style="margin-left: 20px"><a href="http://localhost:6555/references\operatores">3.4. operatores</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\operatores\!=">3.4.2. !=</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\operatores\==">3.4.3. ==</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\operatores\misc">3.4.4. misc</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\operatores\misc\and">3.4.4.2. and</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\operatores\misc\not">3.4.4.3. not</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\operatores\misc\or">3.4.4.4. or</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\operatores\numbers">3.4.5. numbers</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\operatores\numbers\bigger">3.4.5.2. bigger</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\operatores\numbers\bigger=">3.4.5.3. bigger=</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\operatores\numbers\smaller">3.4.5.4. smaller</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\operatores\numbers\smaller=">3.4.5.5. smaller=</a></li>
         </ul>
       </nav>
 
       <div class="content">
         <div class="header">
-          <h2>Rubber Script</h2>
+          <h2>Cobalt</h2>
 
           <div class="left">
             <i
@@ -339,6 +395,16 @@ code {
               class="fa-brands fa-github"
               style="cursor: pointer"
             ></i>
+            <i
+              id="theme_toggle_moon"
+              class="fa-solid fa-moon"
+              style="color: #ffffff; cursor: pointer"
+            ></i>
+            <i
+              id="theme_toggle_sun"
+              class="fa-solid fa-sun"
+              style="cursor: pointer; display: none"
+            ></i>
           </div>
           <div class="right"></div>
         </div>
@@ -354,10 +420,10 @@ code {
 (!= (type 1) &quot;number&quot;) ; false
 (!= (type &quot;1&quot;) &quot;number&quot;) ; false (Yes, string and numbers are the same.)
 (!= (type (str &quot;1&quot;)) &quot;number&quot;) ; false
-(!= &quot;abc&quot; null) ; true
+(!= &quot;abc&quot; nil) ; true
 </code></pre>
 <h2>In code examples:</h2>
-<pre><code class="language-clj">(let input (prompt (str Hey, try don't get my number:)))
+<pre><code class="language-clj">(let input (prompt (str Hey, try don't guess my number:)))
 (let number (math-random 1 5))
 
 (if (!= {input} {number})

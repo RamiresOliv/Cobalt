@@ -1,1 +1,1 @@
-Every reference usable in Rubber.
+Every reference usable in Cobalt.

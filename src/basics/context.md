@@ -1,8 +1,7 @@
 Simple contexts to make the language:
 
 ```clj
-; others.
-null = nil
+; Base stuff of a language, right?
 
 ; Booleans
 true = true
@@ -18,6 +17,6 @@ inf = math.inf ; (callable by {inf} or (inf))
 123 or "123" ; number
 "a123" ; string
 true or false ; boolean
-null ; null value.
+nil ; nil value.
 [a b c d e] ; list
 ```

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rubber Script / 404</title>
+    <title>Cobalt / 404</title>
     <link rel="shortcut icon" href="ico.png" type="image/x-icon" />
     <style> /*
 You can disable this super insane css by removing "$ {import:css/core-base.css}", or deleting this file.
@@ -17,6 +17,11 @@ ul {
   margin: 0;
   padding: 0;
   font-family: "Inconsolata", monospace;
+  background-color: #fcfcfc;
+}
+
+body:black_theme {
+  background-color: #191b1b;
 }
 
 ul ul {
@@ -26,6 +31,10 @@ ul ul {
 a {
   text-decoration: none;
   color: #000000;
+}
+
+a:dark_theme {
+  color: #e8e7e2;
 }
 
 .container {
@@ -52,6 +61,10 @@ a {
   max-width: 1000px;
 }
 
+#sidebar_black_theme {
+  background-color: #1b1c1f;
+}
+
 .sidebar ul {
   list-style: none;
 }
@@ -69,6 +82,10 @@ a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.sidebar ul li a:black_theme {
+  background-color: #e8e7e2;
 }
 
 .sidebar ul li a:hover {
@@ -130,6 +147,13 @@ a {
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+.content .header:dark_theme {
+  color: #e8e7e2;
+}
+.content .header:dark_theme {
+  color: #e8e7e2;
 }
 
 .content .header h3 {
@@ -197,6 +221,10 @@ code {
   padding: 2px 4px; /* Espaçamento interno reduzido */
   border-radius: 4px; /* Cantos arredondados */
 }
+
+code:dark_theme {
+  background-color: #e6e6e6;
+}
  </style>
 
     <script>
@@ -236,11 +264,11 @@ code {
   <body>
     <div style="text-align: center" class="content">
       <div class="header">
-        <h2>Rubber Script / 404</h2>
+        <h2>Cobalt / 404</h2>
       </div>
       <p id="pathName"></p>
       <p>The requested path doesn't exists.</p>
-      <a class="hover-underline" href="https://ramiresoliv.github.io/RubberScript"
+      <a class="hover-underline" href="http://localhost:6555"
         >-> Return to <span class="root-color">root</span>?</a
       >
       <br /><br /><br /><br /><br />

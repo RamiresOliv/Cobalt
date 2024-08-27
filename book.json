@@ -1,10 +1,10 @@
 {
-  "name": "Rubber Script",
-  "description": "A powerfull and a heavy syntax language.",
-  "url": "https://ramiresoliv.github.io/RubberScript",
+  "name": "Cobalt",
+  "description": "A powerful and \"simple\" programming language made to be used in terminals.",
+  "url": "",
   "author": {
     "name": "RamiresOliv",
-    "github": "https://github.com/RamiresOliv/RubberScript"
+    "github": "https://github.com/RamiresOliv/Cobalt"
   },
   "navigation": {
     "enabled": true,
@@ -12,6 +12,6 @@
     "blacklist_dir": ["images"]
   },
   "includes": {
-    "test": "argument."
+    "name": "Cobalt"
   }
 }

@@ -6,7 +6,7 @@ This operator is used to compare two values, very usefull in if's.
 ## Usage:
 
 ```clj
-(>= "abc" "abc") ; null
+(>= "abc" "abc") ; nil
 (>= 1 1) ; true
 (>= 1 2) ; false
 (>= 1 0) ; true
