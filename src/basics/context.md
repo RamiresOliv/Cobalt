@@ -5,16 +5,11 @@ Working with primitive datas in Cobalt.
 In this page we will cover all the primitives datas. (about strings, below we have a full guide of how use they.)
 
 ```clj
-; Base stuff of a language, right?
+; Natives:
 
-; Booleans
+; Booleans:
 true = true
 false = false
-
-; String operators
-nothing = "" ; (callable by {nothing} or (nothing))
-space = " " ; (callable by {space} or (space))
-inf = math.inf ; (callable by {inf} or (inf))
 
 ; types:
 "abc" ; string
@@ -33,14 +28,14 @@ Using string function:
 ; understanding why/how/where use (str)
 
 ; strings can be formed and identified by three ways,
-Hello.                  ; without any '"', this means a string.
-"Hello."                ; single word string, this also means a string.
-(str "Hello world!")    ; phrases into string, str function usage.
+Hello. ; without any '"', this means a string.
+"Hello." ; single word string, this also means a string.
+(str "Hello world!") ; phrases into string, str function usage.
 
 ; Here some exemples and outputs:
 
-(print Hello)        ; output: Hello
-(print "Hello")        ; output: Hello
+(print Hello) ; output: Hello
+(print "Hello") ; output: Hello
 (print Hello "World!") ; output: Hello ; yes. "World!" being also a string it became a second argument, you will understand better this in logic page.
 (print "Hello World!") ; output Hello World! ; correct usage of quotes.
 (print (str Hello World!)) ; output: Hello World!

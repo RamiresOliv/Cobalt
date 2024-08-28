@@ -489,16 +489,11 @@ code:dark_theme {
         <div class="page"><h1>context of the language</h1>
 <p>Working with primitive datas in Cobalt.</p>
 <p>In this page we will cover all the primitives datas. (about strings, below we have a full guide of how use they.)</p>
-<pre><code class="language-clj">; Base stuff of a language, right?
+<pre><code class="language-clj">; Natives:
 
-; Booleans
+; Booleans:
 true = true
 false = false
-
-; String operators
-nothing = &quot;&quot; ; (callable by {nothing} or (nothing))
-space = &quot; &quot; ; (callable by {space} or (space))
-inf = math.inf ; (callable by {inf} or (inf))
 
 ; types:
 &quot;abc&quot; ; string
@@ -513,14 +508,14 @@ nil ; nil value.
 <pre><code class="language-clj">; understanding why/how/where use (str)
 
 ; strings can be formed and identified by three ways,
-Hello.                  ; without any '&quot;', this means a string.
-&quot;Hello.&quot;                ; single word string, this also means a string.
-(str &quot;Hello world!&quot;)    ; phrases into string, str function usage.
+Hello. ; without any '&quot;', this means a string.
+&quot;Hello.&quot; ; single word string, this also means a string.
+(str &quot;Hello world!&quot;) ; phrases into string, str function usage.
 
 ; Here some exemples and outputs:
 
-(print Hello)        ; output: Hello
-(print &quot;Hello&quot;)        ; output: Hello
+(print Hello) ; output: Hello
+(print &quot;Hello&quot;) ; output: Hello
 (print Hello &quot;World!&quot;) ; output: Hello ; yes. &quot;World!&quot; being also a string it became a second argument, you will understand better this in logic page.
 (print &quot;Hello World!&quot;) ; output Hello World! ; correct usage of quotes.
 (print (str Hello World!)) ; output: Hello World!
