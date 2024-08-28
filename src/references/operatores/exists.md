@@ -1,0 +1,5 @@
+# "?" operator.
+
+```clj
+(? nil) ; true
+```

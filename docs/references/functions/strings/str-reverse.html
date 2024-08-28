@@ -1,0 +1,506 @@
+<!--
+        Html content compiled by dockmaker.
+          -> https://github.com/RamiresOliv/dockmaker
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A powerful and simple programming language made to be used in terminals." />
+    <meta name="author" content="RamiresOliv" />
+
+    <meta property="og:site_name" content="Cobalt" />
+    <meta property="og:title" content="Cobalt / str-reverse" />
+    <meta property="og:image" content="http://localhost:6555/favicon.ico" />
+    <meta property="og:description" content="A powerful and simple programming language made to be used in terminals." />
+    <meta property="og:url" content="http://localhost:6555/references/functions/strings/str-reverse" />
+
+    <title>Cobalt / str-reverse</title>
+    <link
+      rel="shortcut icon"
+      href="./favicon.ico"
+      type="image/x-icon"
+      id="base_favicon_link"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/clojure.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <script> /*
+Path fixer:
+This thing is required to fix the things path. 🙂
+*/
+
+function fixPath(path) {
+  path = path || "";
+  if (!path.startsWith("/")) path = "/" + path;
+
+  if ("http://localhost:6555" == "") {
+    return document.location.origin + path;
+  } else {
+    return "http://localhost:6555" + path;
+  }
+}
+ </script> <script> /*
+This adds favicon!!!!!!!!!!!!!!!!
+*/
+
+// This loads very fast the ico. But can cause issues too. If you think this is bad,
+// idk what you should do. (just trust)
+const base_favicon_link = document.getElementById("base_favicon_link");
+base_favicon_link.href = fixPath("favicon.ico");
+ </script> <style> /*
+You can disable this super insane css by removing "$ {import:css/core-base.css}", or deleting this file.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+body,
+h2,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+  font-family: "Inconsolata", monospace;
+  background-color: #fcfcfc;
+}
+
+body:black_theme {
+  background-color: #191b1b;
+}
+
+ul ul {
+  margin-left: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:dark_theme {
+  color: #e8e7e2;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+.sidebar {
+  display: block;
+
+  width: 200px;
+  background-color: #fbfbfb;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+
+  resize: horizontal;
+  overflow: auto;
+  min-width: 160px;
+  max-width: 1000px;
+}
+
+#sidebar_black_theme {
+  background-color: #1b1c1f;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  text-decoration: solid;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #000000;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar ul li a:black_theme {
+  background-color: #e8e7e2;
+}
+
+.sidebar ul li a:hover {
+  color: #9a9a9a;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+}
+.content .page {
+  word-wrap: break-word;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: block;
+  max-width: 1300px;
+  gap: 10px;
+  padding: 20px;
+}
+
+.content .page a {
+  text-decoration: underline;
+  color: #4a5666;
+}
+.content .page a:visited {
+  color: #20579e;
+}
+
+.content .page h1 {
+  font-weight: 900;
+}
+.container .page blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 16px;
+  margin-left: 0;
+  font-style: italic;
+  color: #969696;
+}
+
+.content section {
+  margin-bottom: 40px;
+}
+
+.content h2 {
+  margin-bottom: 10px;
+}
+
+.content p {
+  line-height: 1.6;
+}
+
+.content .header {
+  margin-bottom: 20px;
+  padding: 10px;
+  color: #000000;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.content .header:dark_theme {
+  color: #e8e7e2;
+}
+.content .header:dark_theme {
+  color: #e8e7e2;
+}
+
+.content .header h3 {
+  font-weight: 900;
+}
+
+.content .footer {
+  padding: 10px;
+  text-align: center;
+}
+
+.content .header .left {
+  position: absolute;
+  padding: 10px;
+  left: 0px;
+  flex: 10px;
+  padding-left: 15px;
+}
+.content .header .right {
+  position: absolute;
+  right: 0;
+  padding-right: 20px;
+}
+
+i {
+  transition: transform 0.3s, color 0.3s;
+}
+
+i:hover {
+  transform: scale(1.2);
+  color: #317bdb;
+}
+
+button {
+  display: inline-block;
+  padding: 5px 20px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace; /* Fonte monoespaçada */
+  background-color: #f8f8f8; /* Fundo suave */
+  border-radius: 4px; /* Cantos arredondados */
+  padding: 8px; /* Espaçamento interno */
+  color: #333; /* Cor do texto */
+  overflow-x: auto; /* Rolagem horizontal se necessário */
+}
+code {
+  display: inline; /* Exibe inline para código embutido */
+  background-color: #e6e6e6; /* Fundo mais claro para código inline */
+  padding: 2px 4px; /* Espaçamento interno reduzido */
+  border-radius: 4px; /* Cantos arredondados */
+}
+
+code:dark_theme {
+  background-color: #e6e6e6;
+}
+ </style>
+    <script
+      src="https://kit.fontawesome.com/0dcf98cd2f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      window.onload = () => {
+        const body = document.getElementsByClassName("body");
+        const glossary = document.getElementById("glossary");
+        const github_logo = document.getElementById("github_logo");
+        const menu_toggle = document.getElementById("menu_toggle");
+        const print_icon = document.getElementById("print_icon");
+        const theme_toggle_moon = document.getElementById("theme_toggle");
+
+        const themes = {
+          dark: "fa-solid fa-moon",
+          white: "fa-solid fa-sun",
+        };
+
+        // New things comming...
+        /*let themeIs = 0; // 0: dark, 1: white
+
+        const themeFunc = (m) => {
+          if (themeIs == 0) {
+            themeIs = 1;
+            theme_toggle_sun.style.display = null;
+            theme_toggle_moon.style.display = "none";
+
+            body.className = "black_theme";
+          } else {
+            themeIs = 0;
+            theme_toggle_sun.style.display = "none";
+            theme_toggle_moon.style.display = null;
+            body.className = "";
+          }
+        };
+
+        theme_toggle_moon.addEventListener("click", themeFunc);
+        theme_toggle_sun.addEventListener("click", themeFunc);*/
+
+        let menu_state = true;
+        menu_toggle.addEventListener("click", (m) => {
+          if (menu_state == true) {
+            menu_state = false;
+            menu_toggle.className = "fa-solid fa-square-caret-right";
+            glossary.style.display = "none";
+          } else {
+            menu_state = true;
+            menu_toggle.className = "fa-solid fa-square-caret-left";
+            glossary.style.display = "block";
+          }
+        });
+
+        github_logo.addEventListener("click", (m) => {
+          window.open("https://github.com/RamiresOliv/Cobalt", "_blank");
+        });
+
+        print_icon.addEventListener("click", (m) => {
+          console.log("This feature is still in dev.");
+          print();
+        });
+      };
+    </script>
+  </head>
+  <body class="body">
+    <div class="container">
+      <nav id="glossary" class="sidebar">
+        <div class="header">
+          <h3>
+            <a href="http://localhost:6555"
+              ><ico style="color: #000000" class="fa-solid fa-cubes"></ico>
+              Cobalt</a
+            >
+          </h3>
+        </div>
+        <hr />
+        <ul>
+          <li><a href="http://localhost:6555">1. home</a></li>
+<li style="margin-left: 0px"><a href="http://localhost:6555/basics">2. basics</a></li>
+<li style="margin-left: 20px"><a href="http://localhost:6555/basics\context">2.2. context</a></li>
+<li style="margin-left: 20px"><a href="http://localhost:6555/basics\logic">2.3. logic</a></li>
+<li style="margin-left: 20px"><a href="http://localhost:6555/basics\usage">2.4. usage</a></li>
+<li style="margin-left: 0px"><a href="http://localhost:6555/references">3. references</a></li>
+<li style="margin-left: 20px"><a href="http://localhost:6555/references\functions">3.2. functions</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\functions\alphabet">3.2.2. alphabet</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\functions\filesystem">3.2.3. filesystem</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\filesystem\append">3.2.3.2. append</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\filesystem\del">3.2.3.3. del</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\filesystem\exists">3.2.3.4. exists</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\filesystem\get-cd">3.2.3.5. get-cd</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\filesystem\read-dir">3.2.3.6. read-dir</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\filesystem\read">3.2.3.7. read</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\filesystem\require">3.2.3.8. require</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\filesystem\scd">3.2.3.9. scd</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\filesystem\write">3.2.3.10. write</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\functions\functions">3.2.4. functions</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\functions\calling-defs">3.2.4.2. calling defs</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\functions\def">3.2.4.3. def</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\functions\list">3.2.5. list</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\list\list-add">3.2.5.2. list-add</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\list\list-clear">3.2.5.3. list-clear</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\list\list-find">3.2.5.4. list-find</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\list\list-get">3.2.5.5. list-get</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\list\list-join">3.2.5.6. list-join</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\list\list-len">3.2.5.7. list-len</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\list\list-new">3.2.5.8. list-new</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\list\list-remove">3.2.5.9. list-remove</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\list\list-sort">3.2.5.10. list-sort</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\functions\lorem">3.2.6. lorem</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\functions\natives">3.2.7. natives</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\natives\for">3.2.7.2. for</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\natives\if">3.2.7.3. if</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\functions\os">3.2.8. os</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\os\date">3.2.8.2. date</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\os\sleep">3.2.8.3. sleep</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\os\spawn">3.2.8.4. spawn</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\os\tick">3.2.8.5. tick</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\os\time">3.2.8.6. time</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\functions\others">3.2.9. others</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\others\break">3.2.9.2. break</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\others\inf">3.2.9.3. inf</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\others\nothing">3.2.9.4. nothing</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\others\return">3.2.9.5. return</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\others\space">3.2.9.6. space</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\functions\print">3.2.10. print</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\functions\strings">3.2.11. strings</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\strings\str-color">3.2.11.2. str-color</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\strings\str-format">3.2.11.3. str-format</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\strings\str-len">3.2.11.4. str-len</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\strings\str-lower">3.2.11.5. str-lower</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\strings\str-replace">3.2.11.6. str-replace</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\strings\str-reverse">3.2.11.7. str-reverse</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\strings\str-split">3.2.11.8. str-split</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\strings\str-upper">3.2.11.9. str-upper</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\strings\str">3.2.11.10. str</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\functions\terminal">3.2.12. terminal</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\terminal\clear">3.2.12.2. clear</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\terminal\print">3.2.12.3. print</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\terminal\prompt">3.2.12.4. prompt</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\functions\variables">3.2.13. variables</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\variables\get">3.2.13.2. get</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\variables\let">3.2.13.3. let</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\functions\variables\string-calls">3.2.13.4. string calls</a></li>
+<li style="margin-left: 20px"><a href="http://localhost:6555/references\math">3.3. math</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\math\math-abs">3.3.2. math-abs</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\math\math-clamp">3.3.3. math-clamp</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\math\math-floor">3.3.4. math-floor</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\math\math-lerp">3.3.5. math-lerp</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\math\math-random">3.3.6. math-random</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\math\math-round">3.3.7. math-round</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\math\min">3.3.8. min</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\math\mul">3.3.9. mul</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\math\sum">3.3.10. sum</a></li>
+<li style="margin-left: 20px"><a href="http://localhost:6555/references\operatores">3.4. operatores</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\operatores\!=">3.4.2. !=</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\operatores\==">3.4.3. ==</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\operatores\exists">3.4.4. exists</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\operatores\misc">3.4.5. misc</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\operatores\misc\and">3.4.5.2. and</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\operatores\misc\not">3.4.5.3. not</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\operatores\misc\or">3.4.5.4. or</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\operatores\numbers">3.4.6. numbers</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\operatores\numbers\bigger">3.4.6.2. bigger</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\operatores\numbers\bigger=">3.4.6.3. bigger=</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\operatores\numbers\smaller">3.4.6.4. smaller</a></li>
+<li style="margin-left: 60px"><a href="http://localhost:6555/references\operatores\numbers\smaller=">3.4.6.5. smaller=</a></li>
+<li style="margin-left: 40px"><a href="http://localhost:6555/references\operatores\type">3.4.7. type</a></li>
+        </ul>
+      </nav>
+
+      <div class="content">
+        <div class="header">
+          <h2>Cobalt</h2>
+
+          <div class="left">
+            <i
+              id="menu_toggle"
+              class="fa-solid fa-square-caret-left"
+              style="cursor: pointer"
+            ></i>
+            <i
+              id="print_icon"
+              class="fa-solid fa-print"
+              style="cursor: pointer"
+            ></i>
+            <i
+              id="github_logo"
+              class="fa-brands fa-github"
+              style="cursor: pointer"
+            ></i>
+            <!-- <i
+              id="theme_toggle_moon"
+              class="fa-solid fa-moon"
+              style="color: #ffffff; cursor: pointer"
+            ></i>
+            <i
+              id="theme_toggle_sun"
+              class="fa-solid fa-sun"
+              style="cursor: pointer; display: none"
+            ></i> -->
+          </div>
+          <div class="right"></div>
+        </div>
+        <div class="page"></div>
+
+        <div class="footer">
+          <p>
+            <a href="https://github.com/RamiresOliv/dockmaker"
+              ><ico class="fa-solid fa-cubes"></ico> Built with dockMaker</a
+            >
+          </p>
+          <p>
+            <a href="https://pages.github.com/"
+              ><ico class="fa-solid fa-earth-americas"></ico> Hosted in Github
+              pages</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,1 +1,1 @@
-An extention of the operatores.
+An extention of operatores.
