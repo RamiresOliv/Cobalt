@@ -1,14 +1,14 @@
-# ${book_name}
+# ${book_name}?
 
-> ${book_description}
+Cobalt is a programming language made in Roblox with luau!
+<br>
 
-## What is Cobalt?
+# Getting started
 
-Cobalt is a programming language made in Roblox with luau, his main porpuse was to be the Cobalt-OS language of a Roblox game, and this is a documentation made exclusively to talk about Cobalt, every point to make you do anything. _Have fun coding devs!_
-
-## Getting started
-
-Theres not a specific point to you get started in Cobalt, but you can start exploring in [basics](basics) section.
+Theres not a specific point to you get started in Cobalt... You can press RightShift or ["] to open the in-game doumentation.
+<br>
+Lost?
+You can test Cobalt in roblox: [www.roblox.com/games/97398140739060/Cobalt](https://www.roblox.com/games/97398140739060/Cobalt)
 
 # Note
 
@@ -16,4 +16,5 @@ I am thinking to bring Cobalt outside of Roblox, but not for now. So, if you wan
 
 Cobalt is a experimental language so, bugs and problems should be expected.
 
-${import:html/warning.html}
+<br>
+**I will never ask robux or real money for you use Cobalt.**

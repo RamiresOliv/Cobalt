@@ -16,7 +16,7 @@ false = false
 123 or "123" ; number
 "a123" ; string
 true or false ; boolean
-nil ; nil value.
+nil ; null/empty value.
 [a b c d e] ; list
 ```
 
