@@ -1,5 +1,0 @@
-# "?" operator.
-
-```clj
-(? nil) ; true
-```
