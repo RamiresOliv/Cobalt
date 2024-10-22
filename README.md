@@ -7,13 +7,13 @@ Made in Roblox Studio.
 
 - Free HTTP handling, _(post & get)_
 - Math
-- functions
-- a friendly interface
-- manual in-game
-- open terminal
+- Functions
+- A friendly interface
+- Manual in-game
+- Open terminal
 - Database _(comming soon)_
 - Autorun _(comming soon)_
-- much more!
+- Much more!
 
 ---
 
